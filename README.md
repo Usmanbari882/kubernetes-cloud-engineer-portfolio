@@ -444,3 +444,424 @@ This portfolio demonstrates my practical Kubernetes skills as part of my journey
 
 I am continuously improving my skills in Cloud Infrastructure, Kubernetes, Automation, and Cloud Native Technologies.# kubernetes-cloud-engineer-portfolio
 Complete Kubernetes Cloud Engineer Portfolio with practical implementations, YAML configurations, networking, storage, security, monitoring and Azure AKS.
+# Kubernetes Commands Reference Guide
+
+یہ فائل Kubernetes Hands-on Practice میں استعمال ہونے والی اہم Commands کا Reference ہے۔
+
+---
+
+# 1. Kubernetes Cluster Check
+
+## Cluster Status Check
+
+```bash
+kubectl cluster-info
+```
+
+Kubernetes Cluster کی Information دیکھنے کے لیے۔
+
+---
+
+## Nodes Check
+
+```bash
+kubectl get nodes
+```
+
+Cluster کے تمام Nodes دیکھنے کے لیے۔
+
+---
+
+## Node Details
+
+```bash
+kubectl describe node
+```
+
+Node کی مکمل Information دیکھنے کے لیے۔
+
+---
+
+# 2. Pod Management
+
+## Pods دیکھنا
+
+```bash
+kubectl get pods
+```
+
+تمام Running Pods دیکھنے کے لیے۔
+
+---
+
+## Detailed Pod Information
+
+```bash
+kubectl describe pod <pod-name>
+```
+
+Pod کی مکمل Details اور Events دیکھنے کے لیے۔
+
+---
+
+## Pod کے اندر جانا
+
+```bash
+kubectl exec -it <pod-name> -- bash
+```
+
+Container کے اندر Shell Access لینے کے لیے۔
+
+---
+
+## Pod سے باہر آنا
+
+```bash
+exit
+```
+
+Container Shell سے واپس آنے کے لیے۔
+
+---
+
+## Pod Delete کرنا
+
+```bash
+kubectl delete pod <pod-name>
+```
+
+Pod delete کرنے کے لیے۔
+
+---
+
+# 3. YAML Files Deployment
+
+## Resource Create کرنا
+
+```bash
+kubectl apply -f filename.yaml
+```
+
+YAML file سے Kubernetes Resource بنانے کے لیے۔
+
+---
+
+## Resource Delete کرنا
+
+```bash
+kubectl delete -f filename.yaml
+```
+
+YAML کے ذریعے بنایا گیا Resource ختم کرنے کے لیے۔
+
+---
+
+# 4. Deployment Management
+
+## Deployment دیکھنا
+
+```bash
+kubectl get deployments
+```
+
+Deployments کی Information دیکھنے کے لیے۔
+
+---
+
+## Deployment Details
+
+```bash
+kubectl describe deployment <deployment-name>
+```
+
+Deployment کی مکمل Details کے لیے۔
+
+---
+
+## Deployment Scale کرنا
+
+```bash
+kubectl scale deployment <name> --replicas=3
+```
+
+Pods کی تعداد بڑھانے یا کم کرنے کے لیے۔
+
+---
+
+# 5. Service Management
+
+## Services دیکھنا
+
+```bash
+kubectl get services
+```
+
+تمام Services دیکھنے کے لیے۔
+
+---
+
+## Service Details
+
+```bash
+kubectl describe service <service-name>
+```
+
+Service کی Details دیکھنے کے لیے۔
+
+---
+
+# 6. ConfigMap
+
+## ConfigMap دیکھنا
+
+```bash
+kubectl get configmap
+```
+
+ConfigMaps دیکھنے کے لیے۔
+
+---
+
+## ConfigMap Details
+
+```bash
+kubectl describe configmap <name>
+```
+
+ConfigMap کی Information کے لیے۔
+
+---
+
+# 7. Secret Management
+
+## Secrets دیکھنا
+
+```bash
+kubectl get secrets
+```
+
+Kubernetes Secrets دیکھنے کے لیے۔
+
+---
+
+## Secret Details
+
+```bash
+kubectl describe secret <name>
+```
+
+Secret Information دیکھنے کے لیے۔
+
+---
+
+# 8. Storage (PV & PVC)
+
+## Persistent Volumes دیکھنا
+
+```bash
+kubectl get pv
+```
+
+Persistent Volumes دیکھنے کے لیے۔
+
+---
+
+## Persistent Volume Claims
+
+```bash
+kubectl get pvc
+```
+
+PVC Status دیکھنے کے لیے۔
+
+---
+
+## Volume Pod Test
+
+```bash
+kubectl exec -it nginx-volume-pod -- bash
+```
+
+Volume mounted Pod میں جانے کے لیے۔
+
+---
+
+## Website File Check
+
+```bash
+cd /usr/share/nginx/html
+```
+
+Nginx Website Directory میں جانے کے لیے۔
+
+```bash
+cat index.html
+```
+
+File Content دیکھنے کے لیے۔
+
+---
+
+# 9. StatefulSet
+
+## StatefulSet دیکھنا
+
+```bash
+kubectl get statefulset
+```
+
+StatefulSets دیکھنے کے لیے۔
+
+---
+
+## Stateful Pod Delete Test
+
+```bash
+kubectl delete pod nginx-stateful-1
+```
+
+Pod delete کر کے دیکھنا کہ StatefulSet دوبارہ Pod بناتا ہے۔
+
+---
+
+# 10. DaemonSet
+
+## DaemonSet دیکھنا
+
+```bash
+kubectl get daemonsets
+```
+
+DaemonSets دیکھنے کے لیے۔
+
+---
+
+## DaemonSet Deploy کرنا
+
+```bash
+kubectl apply -f nginx-daemonset.yaml
+```
+
+DaemonSet create کرنے کے لیے۔
+
+---
+
+# 11. Headless Service
+
+## Headless Service Check
+
+```bash
+kubectl get services
+```
+
+Cluster IP None والی Service دیکھنے کے لیے۔
+
+---
+
+# 12. Logs اور Troubleshooting
+
+## Pod Logs
+
+```bash
+kubectl logs <pod-name>
+```
+
+Container Logs دیکھنے کے لیے۔
+
+---
+
+## All Resources Check
+
+```bash
+kubectl get all
+```
+
+تمام Kubernetes Resources دیکھنے کے لیے۔
+
+---
+
+# 13. YAML File Management
+
+## Files دیکھنا
+
+```bash
+ls
+```
+
+Directory کی Files دیکھنے کے لیے۔
+
+---
+
+## YAML File بنانا
+
+```bash
+nano filename.yaml
+```
+
+YAML Configuration لکھنے کے لیے۔
+
+---
+
+# 14. Helm
+
+## Helm Version
+
+```bash
+helm version
+```
+
+Helm Installation Check کرنے کے لیے۔
+
+---
+
+## Helm Installation
+
+```bash
+sudo snap install helm --classic
+```
+
+Helm install کرنے کے لیے۔
+
+---
+
+# 15. Kubernetes Troubleshooting Commands
+
+```bash
+kubectl get events
+```
+
+Cluster Events دیکھنے کے لیے۔
+
+```bash
+kubectl describe pod <pod-name>
+```
+
+Pod Issues Troubleshoot کرنے کے لیے۔
+
+---
+
+# Kubernetes Project Summary
+
+اس Project میں استعمال ہونے والی Technologies:
+
+* Kubernetes Cluster
+* Pods
+* Deployments
+* Services
+* ConfigMaps
+* Secrets
+* Persistent Volume
+* Persistent Volume Claim
+* StatefulSet
+* DaemonSet
+* Headless Service
+* Helm Basics
+
+---
+
+# Author
+
+Muhammad Usman Bari
+
+Cloud Engineer Portfolio Project
+
