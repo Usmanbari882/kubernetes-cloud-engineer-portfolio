@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test:
+  build:
 
     runs-on: ubuntu-latest
 
@@ -18,5 +18,8 @@ jobs:
       - name: Show Repository Files
         run: ls -la
 
-      - name: Run Test Message
+      - name: Run Test
         run: echo "Testing completed successfully"
+
+      - name: Build Docker Image
+        run: docker build -t cloud-ci-demo .
