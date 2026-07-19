@@ -6,9 +6,17 @@ on:
       - main
 
 jobs:
-  hello:
+  test:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print Welcome Message
-        run: echo "Hello Usman! My First CI Pipeline is Running Successfully."
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Show Repository Files
+        run: ls -la
+
+      - name: Run Test Message
+        run: echo "Testing completed successfully"
